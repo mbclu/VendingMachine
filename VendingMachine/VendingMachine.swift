@@ -9,7 +9,14 @@
 import Foundation
 
 class VendingMachine {
+    
+    var displayText = "INSERT COIN"
+
     func display() -> String {
-        return "INSERT COIN"
+        return displayText
+    }
+    
+    func insert(_ coin: Coin) {
+        displayText = "$ 0.25"
     }
 }

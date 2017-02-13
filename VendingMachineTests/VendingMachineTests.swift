@@ -20,13 +20,15 @@ class VendingMachineTests: XCTestCase {
         super.tearDown()
     }
     
-    enum Coins {
-        case quarter
-    }
-    
     func testItDisplays_INSERT_COIN_WhenEmpty() {
         let underTest = VendingMachine()
         expect(underTest.display()).to(equal("INSERT COIN"))
+    }
+    
+    func testInsertingAQuarterDisplaysTwentyFiveCents() {
+        let underTest = VendingMachine()
+        underTest.insert(Coin.quarter)
+        expect(underTest.display()).to(equal("$ 0.25"))
     }
     
 }
