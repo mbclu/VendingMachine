@@ -31,4 +31,10 @@ class VendingMachineTests: XCTestCase {
         expect(underTest.display()).to(equal("$ 0.25"))
     }
     
+    func testInsertingADimeDisplaysTenCents() {
+        let underTest = VendingMachine()
+        underTest.insert(Coin.dime)
+        expect(underTest.display()).to(equal("$ 0.10"))
+    }
+    
 }

@@ -17,6 +17,6 @@ class VendingMachine {
     }
     
     func insert(_ coin: Coin) {
-        displayText = "$ 0.25"
+        displayText = "$ \(String(format: "%.2f", coin.value))"
     }
 }

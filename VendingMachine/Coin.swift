@@ -9,5 +9,11 @@
 import Foundation
 
 enum Coin {
-    case quarter
+    case quarter, dime
+    var value: Double {
+        switch self {
+            case .dime: return 0.10
+            default:    return 0.25
+        }
+    }
 }
