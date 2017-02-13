@@ -35,5 +35,14 @@ class VendingMachineTests: XCTestCase {
         underTest.insert(Coin.dime)
         expect(self.underTest.display()).to(equal("$ 0.10"))
     }
+
+    func testInsertingANickelDisplaysFiveCents() {
+        underTest.insert(Coin.nickel)
+        expect(self.underTest.display()).to(equal("$ 0.05"))
+    }
     
+    func testInsertingAPennyStillDisplays_INSERT_COIN() {
+        underTest.insert(Coin.penny)
+        expect(self.underTest.display()).to(equal("INSERT COIN"))
+    }
 }

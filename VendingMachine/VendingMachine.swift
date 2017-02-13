@@ -17,6 +17,8 @@ class VendingMachine {
     }
     
     func insert(_ coin: Coin) {
-        displayText = "$ \(String(format: "%.2f", coin.value))"
+        if (coin.value > 0.0) {
+            displayText = "$ \(String(format: "%.2f", coin.value))"
+        }
     }
 }
