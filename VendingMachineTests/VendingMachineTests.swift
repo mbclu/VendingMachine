@@ -11,9 +11,11 @@ import Nimble
 @testable import VendingMachine
 
 class VendingMachineTests: XCTestCase {
+    var underTest:VendingMachine!
     
     override func setUp() {
         super.setUp()
+        underTest = VendingMachine()
     }
     
     override func tearDown() {
@@ -21,20 +23,17 @@ class VendingMachineTests: XCTestCase {
     }
     
     func testItDisplays_INSERT_COIN_WhenEmpty() {
-        let underTest = VendingMachine()
-        expect(underTest.display()).to(equal("INSERT COIN"))
+        expect(self.underTest.display()).to(equal("INSERT COIN"))
     }
     
     func testInsertingAQuarterDisplaysTwentyFiveCents() {
-        let underTest = VendingMachine()
         underTest.insert(Coin.quarter)
-        expect(underTest.display()).to(equal("$ 0.25"))
+        expect(self.underTest.display()).to(equal("$ 0.25"))
     }
     
     func testInsertingADimeDisplaysTenCents() {
-        let underTest = VendingMachine()
         underTest.insert(Coin.dime)
-        expect(underTest.display()).to(equal("$ 0.10"))
+        expect(self.underTest.display()).to(equal("$ 0.10"))
     }
     
 }
