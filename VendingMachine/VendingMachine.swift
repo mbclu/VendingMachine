@@ -11,16 +11,26 @@ import Foundation
 class VendingMachine {
     
     var displayText = "INSERT COIN"
-    var totalInserted = 0.0;
+    var totalInserted = 0.0
+    var coinsReturned = [Coin]()
 
     func display() -> String {
         return displayText
     }
     
+    func coinReturn() -> [Coin] {
+        return coinsReturned
+    }
+    
     func insert(_ coin: Coin) {
-        totalInserted += coin.value;
-        if (totalInserted > 0.0) {
-            displayText = "$ \(String(format: "%.2f", totalInserted))"
+        switch coin {
+        case .penny:
+            coinsReturned.append(coin)
+        default:
+            totalInserted += coin.value;
+            if (totalInserted > 0.0) {
+                displayText = "$ \(String(format: "%.2f", totalInserted))"
+            }
         }
     }
 }
