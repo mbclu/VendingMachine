@@ -45,4 +45,10 @@ class VendingMachineTests: XCTestCase {
         underTest.insert(Coin.penny)
         expect(self.underTest.display()).to(equal("INSERT COIN"))
     }
+    
+    func testInsertingMultipleValidCoinsDisplaysTheSum() {
+        underTest.insert(Coin.quarter)
+        underTest.insert(Coin.dime)
+        expect(self.underTest.display()).to(equal("$ 0.35"))
+    }
 }

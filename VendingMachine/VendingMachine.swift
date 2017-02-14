@@ -11,14 +11,16 @@ import Foundation
 class VendingMachine {
     
     var displayText = "INSERT COIN"
+    var totalInserted = 0.0;
 
     func display() -> String {
         return displayText
     }
     
     func insert(_ coin: Coin) {
-        if (coin.value > 0.0) {
-            displayText = "$ \(String(format: "%.2f", coin.value))"
+        totalInserted += coin.value;
+        if (totalInserted > 0.0) {
+            displayText = "$ \(String(format: "%.2f", totalInserted))"
         }
     }
 }
