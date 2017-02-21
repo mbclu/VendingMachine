@@ -8,18 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VendingMachineViewController: UIViewController {
 
+    @IBOutlet weak var lcd: UITextField!
+    
+    var vendingMachine:VendingMachine!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        vendingMachine = VendingMachine_Impl()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        lcd.text = vendingMachine.display()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
 }
 

@@ -7,5 +7,6 @@ end
 target 'VendingMachineTests' do
 	use_frameworks!
 	pod 'Nimble'
+	pod 'Quick'
 end
 

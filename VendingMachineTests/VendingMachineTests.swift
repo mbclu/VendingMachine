@@ -15,7 +15,7 @@ class VendingMachineTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        underTest = VendingMachine()
+        underTest = VendingMachine_Impl()
     }
     
     override func tearDown() {
