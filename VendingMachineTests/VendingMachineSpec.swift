@@ -18,7 +18,7 @@ class VendingMachineSpec : QuickSpec {
         beforeEach {
             super.setUp()
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name    : "Main", bundle: nil)
             subject = storyboard.instantiateInitialViewController() as! VendingMachineViewController
         }
         
@@ -35,6 +35,10 @@ class VendingMachineSpec : QuickSpec {
                 subject.vendingMachine = vendingMachine
                 expect(subject.view).toNot(beNil())
                 expect(subject.lcd.text).to(equal(expected))
+            }
+            
+            it("displays the new value when a coin is inserted") {
+                
             }
         }
     }
