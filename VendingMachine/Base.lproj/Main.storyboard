@@ -6,6 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,56 +20,102 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="background-view">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-HT-eF0" userLabel="lcd">
-                                <rect key="frame" x="167" y="28" width="183" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.78872168624161076" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <color key="textColor" red="0.71703624684584422" green="1" blue="0.99808056365509668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coin-slot" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-Is-kBc">
-                                <rect key="frame" x="167" y="97" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-E7-qME" userLabel="Twenty Five Cent Button">
-                                <rect key="frame" x="233" y="101" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="twenty-five-cent-coin"/>
-                                <connections>
-                                    <action selector="twentyFiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gej-aQ-p5K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-x3-WCi" userLabel="Ten Cent Button">
-                                <rect key="frame" x="276" y="101" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="ten-cent-coin"/>
-                                <connections>
-                                    <action selector="tenCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5w-hE-VMi"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="insert-left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-qp-6U3">
-                                <rect key="frame" x="197" y="96" width="40" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-rU-TLz" userLabel="Five Cent Button">
-                                <rect key="frame" x="316" y="101" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="five-cent-coin"/>
-                                <connections>
-                                    <action selector="fiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tpf-vk-mK2"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-0m-lyd" userLabel="lcd-stack-view">
+                                <rect key="frame" x="129" y="35" width="234" height="165"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-HT-eF0" userLabel="lcd">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="90"/>
+                                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.78872168624161076" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <color key="textColor" red="0.71703624684584422" green="1" blue="0.99808056365509668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMc-gf-gHY" userLabel="coin-insert-view">
+                                        <rect key="frame" x="0.0" y="98" width="234" height="67"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin-slot" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-Is-kBc">
+                                                <rect key="frame" x="5" y="0.0" width="28.5" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="iMM-Is-kBc" secondAttribute="height" multiplier="3:7" id="6XE-AH-lsv" userLabel="aspect = 2:7"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insert-left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-qp-6U3">
+                                                <rect key="frame" x="28.5" y="0.0" width="29.5" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="8hh-qp-6U3" secondAttribute="height" multiplier="3:7" id="GJN-Dn-1Or"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-E7-qME" userLabel="quarter-button">
+                                                <rect key="frame" x="53" y="0.0" width="67.5" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f6E-E7-qME" secondAttribute="height" multiplier="1:1" id="Ct3-Yj-ZfZ"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="twenty-five-cent-coin"/>
+                                                <connections>
+                                                    <action selector="twentyFiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gej-aQ-p5K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-x3-WCi" userLabel="dime-button">
+                                                <rect key="frame" x="110.5" y="-10" width="58.5" height="59"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Lqu-x3-WCi" secondAttribute="height" multiplier="1:1" id="cpI-Xb-ykB"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="ten-cent-coin"/>
+                                                <connections>
+                                                    <action selector="tenCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5w-hE-VMi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-rU-TLz" userLabel="nickel-button">
+                                                <rect key="frame" x="154" y="15" width="63.5" height="63"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Sv6-rU-TLz" secondAttribute="height" multiplier="1:1" id="JcH-5V-3zz"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="five-cent-coin"/>
+                                                <connections>
+                                                    <action selector="fiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tpf-vk-mK2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="f6E-E7-qME" firstAttribute="trailing" secondItem="Lqu-x3-WCi" secondAttribute="leading" constant="10" id="361-Ck-fhn"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lqu-x3-WCi" secondAttribute="bottom" constant="18" id="50W-1B-GYs"/>
+                                            <constraint firstItem="Lqu-x3-WCi" firstAttribute="trailing" secondItem="Sv6-rU-TLz" secondAttribute="leading" constant="15" id="5oj-Sx-PoD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Sv6-rU-TLz" secondAttribute="bottom" constant="-11" id="6Xo-E9-umo"/>
+                                            <constraint firstItem="iMM-Is-kBc" firstAttribute="trailing" secondItem="8hh-qp-6U3" secondAttribute="leading" constant="5" id="Hzu-YU-92E"/>
+                                            <constraint firstAttribute="bottom" secondItem="iMM-Is-kBc" secondAttribute="bottom" id="NF7-GR-Lh0"/>
+                                            <constraint firstItem="Lqu-x3-WCi" firstAttribute="top" secondItem="FMc-gf-gHY" secondAttribute="top" constant="-10" id="TfF-zF-sNC"/>
+                                            <constraint firstAttribute="bottom" secondItem="8hh-qp-6U3" secondAttribute="bottom" id="Y6e-31-M36"/>
+                                            <constraint firstItem="8hh-qp-6U3" firstAttribute="top" secondItem="FMc-gf-gHY" secondAttribute="top" id="YSe-sO-a8K"/>
+                                            <constraint firstItem="f6E-E7-qME" firstAttribute="top" secondItem="FMc-gf-gHY" secondAttribute="top" id="YgK-FL-uER"/>
+                                            <constraint firstItem="Sv6-rU-TLz" firstAttribute="top" secondItem="FMc-gf-gHY" secondAttribute="top" constant="15" id="gzZ-Uf-oue"/>
+                                            <constraint firstItem="8hh-qp-6U3" firstAttribute="trailing" secondItem="f6E-E7-qME" secondAttribute="leading" constant="5" id="hM2-BM-qrg"/>
+                                            <constraint firstAttribute="bottom" secondItem="f6E-E7-qME" secondAttribute="bottom" id="jNW-aA-Dji"/>
+                                            <constraint firstItem="iMM-Is-kBc" firstAttribute="top" secondItem="FMc-gf-gHY" secondAttribute="top" id="jZk-xN-dEH"/>
+                                            <constraint firstAttribute="leading" secondItem="iMM-Is-kBc" secondAttribute="leading" constant="-5" id="w8V-xG-qwA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FMc-gf-gHY" firstAttribute="height" secondItem="Y7P-HT-eF0" secondAttribute="height" multiplier="0.75" id="e9B-wU-B0S"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i1n-0m-lyd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="113" id="TvC-jg-Diq"/>
+                            <constraint firstItem="i1n-0m-lyd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="bRf-3E-F1N"/>
+                            <constraint firstItem="i1n-0m-lyd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" multiplier="0.3" id="xBw-w5-tVJ"/>
+                            <constraint firstItem="i1n-0m-lyd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="4" id="yFp-by-uel"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lcd" destination="Y7P-HT-eF0" id="c3y-2z-YVK"/>
@@ -74,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.199999999999999" y="37.331334332833585"/>
+            <point key="canvasLocation" x="39" y="60"/>
         </scene>
     </scenes>
     <resources>
