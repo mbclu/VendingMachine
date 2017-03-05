@@ -11,6 +11,9 @@ import UIKit
 class VendingMachineViewController: UIViewController {
 
     @IBOutlet weak var lcd: UITextField!
+    @IBOutlet weak var colaButton: UIButton!
+    @IBOutlet weak var chipsButton: UIButton!
+    @IBOutlet weak var candyButton: UIButton!
     
     var vendingMachine:VendingMachine!
     
@@ -21,6 +24,11 @@ class VendingMachineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        applyCornerRadius(colaButton)
+        applyCornerRadius(chipsButton)
+        applyCornerRadius(candyButton)
+        
         lcd.text = vendingMachine.display()
     }
 
@@ -40,10 +48,14 @@ class VendingMachineViewController: UIViewController {
         updateDisplayForCoin(Coin.nickel)
     }
     
-    func updateDisplayForCoin(_ coin: Coin) {
+    fileprivate func updateDisplayForCoin(_ coin: Coin) {
         self.vendingMachine.insert(coin)
         lcd.text = vendingMachine.display()
-        
+    }
+    
+    fileprivate func applyCornerRadius(_ button: UIButton) {
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10.0
     }
 }
 

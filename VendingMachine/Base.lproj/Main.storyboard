@@ -123,6 +123,7 @@
                                                     </pageControl>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.83137261870000001" green="0.94901967050000002" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="xYe-f4-GYD" secondAttribute="bottom" constant="0.5" id="Dr4-h4-sWa"/>
                                                     <constraint firstItem="xYe-f4-GYD" firstAttribute="centerX" secondItem="Mt4-gP-mCE" secondAttribute="centerX" id="wLT-if-qIn"/>
@@ -195,6 +196,9 @@ Selection</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="candyButton" destination="ZGd-Sg-hKj" id="78Z-ea-x2c"/>
+                        <outlet property="chipsButton" destination="vgJ-9A-9GM" id="soW-5u-N6K"/>
+                        <outlet property="colaButton" destination="U7p-Nd-hwM" id="QJX-3c-CPI"/>
                         <outlet property="lcd" destination="Y7P-HT-eF0" id="c3y-2z-YVK"/>
                     </connections>
                 </viewController>

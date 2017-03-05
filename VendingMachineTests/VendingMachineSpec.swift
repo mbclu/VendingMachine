@@ -47,5 +47,26 @@ class VendingMachineSpec : QuickSpec {
                 expect(subject.lcd.text).to(equal(expected))
             }
         }
+        
+        describe("Button styles") {
+            beforeEach {
+                expect(subject.view).toNot(beNil())
+            }
+            
+            it("has rounded corners for the cola button") {
+                expect(subject.colaButton.layer.cornerRadius).to(equal(10.0))
+                expect(subject.colaButton.clipsToBounds).to(beTrue())
+            }
+            
+            it("has rounded corners for the chips button") {
+                expect(subject.chipsButton.layer.cornerRadius).to(equal(10.0))
+                expect(subject.chipsButton.clipsToBounds).to(beTrue())
+            }
+            
+            it("has rounded corners for the candy button") {
+                expect(subject.candyButton.layer.cornerRadius).to(equal(10.0))
+                expect(subject.candyButton.clipsToBounds).to(beTrue())
+            }
+        }
     }
 }
