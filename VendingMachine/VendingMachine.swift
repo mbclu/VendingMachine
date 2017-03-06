@@ -12,10 +12,10 @@ protocol VendingMachine {
     func display() -> String
     func coinReturn() -> [Coin]
     func insert(_ coin: Coin)
+    func dispense(_ product: Product)
 }
 
 class VendingMachine_Impl : VendingMachine {
-    
     var displayText: String!
     var totalInserted = 0.0
     var coinsReturned = [Coin]()
@@ -41,14 +41,27 @@ class VendingMachine_Impl : VendingMachine {
         }
     }
     
-    func accumulate(_ value: Double) {
+    func dispense(_ product: Product) {
+        if totalInserted == product.price {
+            displayText = "THANK YOU"
+            totalInserted = 0.0
+        } else {
+            displayText = "PRICE " + dollarFormatFor(product.price)
+        }
+    }
+    
+    fileprivate func accumulate(_ value: Double) {
         totalInserted += value;
         updateDisplay()
     }
     
-    func updateDisplay() {
+    fileprivate func updateDisplay() {
         if (totalInserted > 0.0) {
-            displayText = "$ \(String(format: "%.2f", totalInserted))"
+            displayText = dollarFormatFor(totalInserted)
         }
+    }
+    
+    fileprivate func dollarFormatFor(_ value: Double) -> String {
+        return "$ \(String(format: "%.2f", value))"
     }
 }
