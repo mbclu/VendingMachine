@@ -33,7 +33,7 @@ class VendingMachineSpec : QuickSpec {
                 
                 subject.vendingMachine = VendingMachine_Impl(displayText: expected)
                 
-                expect(subject.view).toNot(beNil())
+                _ = subject.view
                 expect(subject.lcd.text).to(equal(expected))
             }
             
@@ -43,8 +43,51 @@ class VendingMachineSpec : QuickSpec {
                 subject.vendingMachine = VendingMachine_Impl()
                 subject.vendingMachine.insert(Coin.quarter)
                 
-                expect(subject.view).toNot(beNil())
+                _ = subject.view
                 expect(subject.lcd.text).to(equal(expected))
+            }
+            
+            describe("Product selection") {
+                beforeEach {
+                    subject.vendingMachine = FakeVendingMachine()
+                    _ = subject.view
+                }
+                
+                it("attempts to dispense cola (product 0) when cola button is pressed") {
+                    let fvm = subject.vendingMachine as! FakeVendingMachine
+                    
+                    expect(fvm.didAttemptToDispense(product: .cola)).to(beFalse())
+                    
+                    subject.colaButton.sendActions(for: UIControlEvents.touchUpInside)
+                    
+                    expect(fvm.didAttemptToDispense(product: .cola)).to(beTrue())
+                }
+                
+                it("attempts to dispense chips (product 1) when chips button is pressed") {
+                    let fvm = subject.vendingMachine as! FakeVendingMachine
+                    
+                    expect(fvm.didAttemptToDispense(product: .chips)).to(beFalse())
+                    
+                    subject.chipsButton.sendActions(for: UIControlEvents.touchUpInside)
+                    
+                    expect(fvm.didAttemptToDispense(product: .chips)).to(beTrue())
+                }
+                
+                it("attempts to dispense candy (product 2) when candy button is pressed") {
+                    let fvm = subject.vendingMachine as! FakeVendingMachine
+                    
+                    expect(fvm.didAttemptToDispense(product: .candy)).to(beFalse())
+                    
+                    subject.candyButton.sendActions(for: UIControlEvents.touchUpInside)
+                    
+                    expect(fvm.didAttemptToDispense(product: .candy)).to(beTrue())
+                }
+                
+                it("updates the display when a product is selected") {
+                    subject.candyButton.sendActions(for: UIControlEvents.touchUpInside)
+                    
+                    expect(subject.lcd.text).to(equal("About to dispense: candy"))
+                }
             }
         }
         

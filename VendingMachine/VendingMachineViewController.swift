@@ -36,20 +36,13 @@ class VendingMachineViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func twentyFiveCentCoinInserted(_ sender: UIButton) {
-        updateDisplayForCoin(Coin.quarter)
+    @IBAction func coinInserted(_ sender: UIButton) {
+        self.vendingMachine.insert(Coin(rawValue: sender.tag)!)
+        lcd.text = vendingMachine.display()
     }
     
-    @IBAction func tenCentCoinInserted(_ sender: UIButton) {
-        updateDisplayForCoin(Coin.dime)
-    }
-    
-    @IBAction func fiveCentCoinInserted(_ sender: UIButton) {
-        updateDisplayForCoin(Coin.nickel)
-    }
-    
-    fileprivate func updateDisplayForCoin(_ coin: Coin) {
-        self.vendingMachine.insert(coin)
+    @IBAction func productSelected(_ sender: UIButton) {
+        vendingMachine.dispense(Product(rawValue: sender.tag)!)
         lcd.text = vendingMachine.display()
     }
     

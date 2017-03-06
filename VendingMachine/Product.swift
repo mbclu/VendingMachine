@@ -7,7 +7,7 @@
 //
 
 import Foundation
-enum Product {
+enum Product: Int {
     case cola, chips, candy
     var price: Double {
         switch self {

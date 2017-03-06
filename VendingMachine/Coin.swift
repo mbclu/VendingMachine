@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Coin {
+enum Coin: Int {
     case quarter, dime, nickel, penny
     var value: Double {
         switch self {

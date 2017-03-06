@@ -62,27 +62,27 @@
                                                         </constraints>
                                                         <state key="normal" backgroundImage="twenty-five-cent-coin"/>
                                                         <connections>
-                                                            <action selector="twentyFiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gej-aQ-p5K"/>
+                                                            <action selector="coinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EdH-gP-ZW0"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-x3-WCi" userLabel="dime-button">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-x3-WCi" userLabel="dime-button">
                                                         <rect key="frame" x="78.5" y="-10" width="42.5" height="42.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Lqu-x3-WCi" secondAttribute="height" multiplier="1:1" id="cpI-Xb-ykB"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="ten-cent-coin"/>
                                                         <connections>
-                                                            <action selector="tenCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5w-hE-VMi"/>
+                                                            <action selector="coinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cU-bk-kJy"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-rU-TLz" userLabel="nickel-button">
+                                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-rU-TLz" userLabel="nickel-button">
                                                         <rect key="frame" x="106" y="15" width="47" height="46.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Sv6-rU-TLz" secondAttribute="height" multiplier="1:1" id="JcH-5V-3zz"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="five-cent-coin"/>
                                                         <connections>
-                                                            <action selector="fiveCentCoinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tpf-vk-mK2"/>
+                                                            <action selector="coinInserted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yAU-eV-oVn"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -141,18 +141,27 @@ Selection</string>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <size key="titleShadowOffset" width="4" height="0.0"/>
                                                         <state key="normal" backgroundImage="can"/>
+                                                        <connections>
+                                                            <action selector="productSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUk-af-78t"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-9A-9GM" userLabel="chips-button">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-9A-9GM" userLabel="chips-button">
                                                         <rect key="frame" x="0.0" y="120.5" width="72" height="55.5"/>
                                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <state key="normal" backgroundImage="chips"/>
+                                                        <connections>
+                                                            <action selector="productSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbR-VN-oFR"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-Sg-hKj" userLabel="candy-button">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-Sg-hKj" userLabel="candy-button">
                                                         <rect key="frame" x="0.0" y="184" width="72" height="55"/>
                                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <state key="normal" backgroundImage="candy-bar"/>
+                                                        <connections>
+                                                            <action selector="productSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9D4-NT-2cG"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="tFH-u7-HsO" userLabel="bottom-button-spacing-view">
                                                         <rect key="frame" x="0.0" y="247" width="72" height="246"/>
