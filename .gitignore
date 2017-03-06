@@ -1,6 +1,5 @@
 #workspace/project
 *.xcworkspace
-*.xcodeproj
 
 #Pods
 Pods/*
