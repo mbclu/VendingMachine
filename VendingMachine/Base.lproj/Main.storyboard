@@ -27,7 +27,7 @@
                                 <rect key="frame" x="8" y="28" width="359" height="631"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-0m-lyd" userLabel="lcd-stack-view">
-                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="126.5"/>
+                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="126"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-HT-eF0" userLabel="lcd">
                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="67.5"/>
@@ -41,22 +41,22 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMc-gf-gHY" userLabel="coin-insert-view">
-                                                <rect key="frame" x="0.0" y="75.5" width="179.5" height="51"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="179.5" height="50.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin-slot" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-Is-kBc">
-                                                        <rect key="frame" x="5" y="0.0" width="22.5" height="51"/>
+                                                        <rect key="frame" x="5" y="0.0" width="22" height="50.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="iMM-Is-kBc" secondAttribute="height" multiplier="3:7" id="6XE-AH-lsv" userLabel="aspect = 2:7"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insert-left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-qp-6U3">
-                                                        <rect key="frame" x="22.5" y="0.0" width="21.5" height="51"/>
+                                                        <rect key="frame" x="22" y="0.0" width="21" height="50.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="8hh-qp-6U3" secondAttribute="height" multiplier="3:7" id="GJN-Dn-1Or"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-E7-qME" userLabel="quarter-button">
-                                                        <rect key="frame" x="39" y="0.0" width="51.5" height="51"/>
+                                                        <rect key="frame" x="38" y="0.0" width="50.5" height="50.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="f6E-E7-qME" secondAttribute="height" multiplier="1:1" id="Ct3-Yj-ZfZ"/>
                                                         </constraints>
@@ -66,7 +66,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-x3-WCi" userLabel="dime-button">
-                                                        <rect key="frame" x="80.5" y="-10" width="42.5" height="43"/>
+                                                        <rect key="frame" x="78.5" y="-10" width="42.5" height="42.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Lqu-x3-WCi" secondAttribute="height" multiplier="1:1" id="cpI-Xb-ykB"/>
                                                         </constraints>
@@ -76,7 +76,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv6-rU-TLz" userLabel="nickel-button">
-                                                        <rect key="frame" x="108" y="15" width="47.5" height="47"/>
+                                                        <rect key="frame" x="106" y="15" width="47" height="46.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Sv6-rU-TLz" secondAttribute="height" multiplier="1:1" id="JcH-5V-3zz"/>
                                                         </constraints>
@@ -111,26 +111,20 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GgF-sI-Hie" userLabel="product-selection-view">
-                                        <rect key="frame" x="0.0" y="138.5" width="359" height="492.5"/>
+                                        <rect key="frame" x="0.0" y="138" width="359" height="493"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt4-gP-mCE" userLabel="product-view">
-                                                <rect key="frame" x="0.0" y="0.0" width="279" height="492.5"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4v-DN-s9r" userLabel="product-view">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="493"/>
                                                 <subviews>
-                                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xYe-f4-GYD">
-                                                        <rect key="frame" x="120" y="455" width="39" height="37"/>
-                                                        <color key="pageIndicatorTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s6q-hr-Bp6">
+                                                        <rect key="frame" x="120" y="456" width="39" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="currentPageIndicatorTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </pageControl>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.83137261870000001" green="0.94901967050000002" blue="0.8078432083" alpha="1" colorSpace="deviceRGB"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="xYe-f4-GYD" secondAttribute="bottom" constant="0.5" id="Dr4-h4-sWa"/>
-                                                    <constraint firstItem="xYe-f4-GYD" firstAttribute="centerX" secondItem="Mt4-gP-mCE" secondAttribute="centerX" id="wLT-if-qIn"/>
-                                                </constraints>
-                                            </view>
+                                            </scrollView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BRO-91-eLO" userLabel="selection-buttons-view">
-                                                <rect key="frame" x="287" y="0.0" width="72" height="492.5"/>
+                                                <rect key="frame" x="287" y="0.0" width="72" height="493"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYI-2H-ltM" userLabel="select-a-product-label">
                                                         <rect key="frame" x="0.0" y="0.0" width="72" height="49"/>
@@ -142,26 +136,26 @@ Selection</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Nd-hwM" userLabel="soda-button">
-                                                        <rect key="frame" x="0.0" y="57" width="72" height="55"/>
+                                                        <rect key="frame" x="0.0" y="57" width="72" height="55.5"/>
                                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <size key="titleShadowOffset" width="4" height="0.0"/>
                                                         <state key="normal" backgroundImage="can"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-9A-9GM" userLabel="chips-button">
-                                                        <rect key="frame" x="0.0" y="120" width="72" height="55"/>
+                                                        <rect key="frame" x="0.0" y="120.5" width="72" height="55.5"/>
                                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <state key="normal" backgroundImage="chips"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-Sg-hKj" userLabel="candy-button">
-                                                        <rect key="frame" x="0.0" y="183" width="72" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="184" width="72" height="55"/>
                                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                                         <state key="normal" backgroundImage="candy-bar"/>
                                                     </button>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="tFH-u7-HsO" userLabel="bottom-button-spacing-view">
-                                                        <rect key="frame" x="0.0" y="246.5" width="72" height="246"/>
+                                                        <rect key="frame" x="0.0" y="247" width="72" height="246"/>
                                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
@@ -173,9 +167,9 @@ Selection</string>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Mt4-gP-mCE" firstAttribute="leading" secondItem="GgF-sI-Hie" secondAttribute="leading" id="0Tm-qw-ztR"/>
                                             <constraint firstItem="BRO-91-eLO" firstAttribute="width" secondItem="GgF-sI-Hie" secondAttribute="width" multiplier="0.2" id="OtD-gQ-1J2"/>
                                             <constraint firstItem="BRO-91-eLO" firstAttribute="centerY" secondItem="GgF-sI-Hie" secondAttribute="centerY" id="eQX-GT-T6M"/>
+                                            <constraint firstItem="z4v-DN-s9r" firstAttribute="leading" secondItem="GgF-sI-Hie" secondAttribute="leading" id="liP-KP-gzT"/>
                                             <constraint firstAttribute="trailing" secondItem="BRO-91-eLO" secondAttribute="trailing" id="wcJ-cw-YOh"/>
                                         </constraints>
                                     </stackView>
