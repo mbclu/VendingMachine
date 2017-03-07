@@ -111,5 +111,21 @@ class VendingMachineSpec : QuickSpec {
                 expect(subject.candyButton.clipsToBounds).to(beTrue())
             }
         }
+        
+        describe("Coin return and vending area styles") {
+            beforeEach {
+                expect(subject.view).toNot(beNil())
+            }
+            
+            it("has rounded corners for the vending area") {
+                expect(subject.vendingAreaView.layer.cornerRadius).to(equal(10.0))
+                expect(subject.vendingAreaView.clipsToBounds).to(beTrue())
+            }
+            
+            it("has rounded corners for the coin return") {
+                expect(subject.coinReturnView.layer.cornerRadius).to(equal(10.0))
+                expect(subject.coinReturnView.clipsToBounds).to(beTrue())
+            }
+        }
     }
 }

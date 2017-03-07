@@ -14,6 +14,8 @@ class VendingMachineViewController: UIViewController {
     @IBOutlet weak var colaButton: UIButton!
     @IBOutlet weak var chipsButton: UIButton!
     @IBOutlet weak var candyButton: UIButton!
+    @IBOutlet weak var vendingAreaView: UIView!
+    @IBOutlet weak var coinReturnView: UIView!
     
     var vendingMachine:VendingMachine!
     
@@ -28,6 +30,8 @@ class VendingMachineViewController: UIViewController {
         applyCornerRadius(colaButton)
         applyCornerRadius(chipsButton)
         applyCornerRadius(candyButton)
+        applyCornerRadius(vendingAreaView)
+        applyCornerRadius(coinReturnView)
         
         lcd.text = vendingMachine.display()
     }
@@ -46,9 +50,9 @@ class VendingMachineViewController: UIViewController {
         lcd.text = vendingMachine.display()
     }
     
-    fileprivate func applyCornerRadius(_ button: UIButton) {
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 10.0
+    fileprivate func applyCornerRadius(_ view: UIView) {
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10.0
     }
 }
 
